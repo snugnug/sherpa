@@ -1,0 +1,33 @@
+.theme-light {
+  --color-accent4: 94 129 172;
+  --color-accent3: 129 161 193;
+  --color-accent2: 136 192 208;
+  --color-accent1: 143 188 187;
+  --color-text2: 59 66 82;
+  --color-text1: 46 52 64;
+  --color-caret: 67 76 94;
+  --color-comment: 71 85 105;
+  --color-highlight: 216 222 233;
+  --color-focused: 229 233 240;
+  --color-base: 236 239 244;
+
+  --color-logo-start: 128 128 128 / 20%;
+  --color-logo-stop: 128 128 128 / 40%;
+}
+
+.theme-dark {
+  --color-accent4: 94 129 172;
+  --color-accent3: 129 161 193;
+  --color-accent2: 136 192 208;
+  --color-accent1: 143 188 187;
+  --color-text2: 236 239 244;
+  --color-text1: 229 233 240;
+  --color-caret: 216 222 233;
+  --color-comment: 71 85 105;
+  --color-highlight: 67 76 94;
+  --color-focused: 59 66 82;
+  --color-base: 46 52 64;
+
+  --color-logo-start: 148 163 184;
+  --color-logo-stop: 51 65 85;
+}

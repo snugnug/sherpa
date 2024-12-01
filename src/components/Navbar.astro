@@ -1,0 +1,26 @@
+---
+import ThemeSwitch from "./ThemeSwitch.astro";
+import Search from "./Search.astro";
+import Spacer from "./Spacer.astro";
+---
+
+<div
+  class="flex flex-row flex-wrap my-1 mx-20 p-3 justify-between items-center"
+>
+  <div class="flex justify-self-start">
+    <a href="/" class="text-2xl">Sherpa</a>
+    <div></div>
+  </div>
+  <div
+    class="flex justify-self-end justify-end flex-row items-center space-x-4"
+  >
+    <div class="text-md justify-between space-x-2">
+      <a href="/" class="hover:text-theme-accent1">Home</a>
+      <a href="/preface" class="hover:text-theme-accent1">Preface</a>
+      <a href="/why-nixos" class="hover:text-theme-accent1">Why NixOS?</a>
+      <a href="/docs" class="hover:text-theme-accent1">Get Started</a>
+    </div>
+    <Spacer />
+    <ThemeSwitch />
+  </div>
+</div>
