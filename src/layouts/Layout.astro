@@ -14,29 +14,38 @@ import "../styles/theme.css";
   </head>
   <body class="bg-theme-900">
     <div
-      class="m-auto w-full h-max min-h-full flex flex-grow text-theme-400 relative "
+      class="m-auto w-full h-max min-h-full flex flex-grow text-theme-400 relative"
     >
-      <header class="fixed top-0 justify-center justify-items-center w-full bg-theme-900">
+      <header
+        class="fixed top-0 justify-center justify-items-center w-full bg-theme-900"
+      >
         <nav class="self-center container mx-auto bg-theme-900">
           <Navbar />
         </nav>
         <div class="bg-theme-1000 w-full h-0.5"></div>
       </header>
       <div class="container m-auto pt-24">
-          <slot />
+        <slot />
       </div>
-      <footer class="text-theme-400 w-full mx-auto items-center text-center justify-center top-[100%] self-end absolute p-4">
-        <span class="text-sm">Code licensed in GPLv3, Content licensed under CC-BY-SA. More information on <a href="https://github.com/the-unnamed-nug/sherpa">Github<a>.</span>
+      <footer
+        class="text-theme-400 w-full mx-auto items-center text-center justify-center top-[100%] self-end absolute p-4"
+      >
+        <span class="text-sm"
+          >Code licensed in GPLv3, Content licensed under CC-BY-SA. More
+          information on <a href="https://github.com/the-unnamed-nug/sherpa"
+            >Github<a>.</a>
+          </a>
+        </span>
       </footer>
     </div>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
