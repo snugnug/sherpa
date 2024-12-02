@@ -10,7 +10,7 @@
   --color-highlight: 216 222 233;
   --color-focused: 229 233 240;
   --color-base: 236 239 244;
-  --color-black: 229 233 240; 
+  --color-black: 229 233 240;
 
   --color-logo-start: 128 128 128 / 20%;
   --color-logo-stop: 128 128 128 / 40%;
@@ -28,8 +28,8 @@
   --color-highlight: 67 76 94;
   --color-focused: 59 66 82;
   --color-base: 46 52 64;
-  --color-black: 34 38 48; 
-  
+  --color-black: 34 38 48;
+
   --color-logo-start: 148 163 184;
   --color-logo-stop: 51 65 85;
 }

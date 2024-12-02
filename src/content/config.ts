@@ -12,7 +12,7 @@ const docsCollection = defineCollection({
 const generalCollection = defineCollection({
   type: "content",
   schema: z.object({
-      title: z.string(),
+    title: z.string(),
   }),
 });
 // 3. Export a single `collections` object to register your collection(s)
