@@ -23,7 +23,7 @@
         name = "nix";
         buildInputs = [pkgs.nodejs pkgs.pnpm];
         shellHook = ''
-          pnpm dev
+          pnpm install && pnpm dev
         '';
       };
       default = pkgs.mkShell {
@@ -33,4 +33,3 @@
     });
   };
 }
-

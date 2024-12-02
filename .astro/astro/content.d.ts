@@ -149,6 +149,13 @@ declare module 'astro:content' {
   render(): Render[".md"];
 }>;
 "general": {
+"preface.md": {
+	id: "preface.md";
+  slug: "preface";
+  body: string;
+  collection: "general";
+  data: InferEntrySchema<"general">
+} & { render(): Render[".md"] };
 "whynixos.md": {
 	id: "whynixos.md";
   slug: "whynixos";
