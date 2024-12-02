@@ -1,2 +1,4 @@
 # do not include node modules
 node_modules/
+.astro/
+dist/
