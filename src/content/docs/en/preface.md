@@ -1,13 +1,14 @@
 ---
 title: Preface
 ---
+
 Let's face it, NixOS documentation is a mess.
 
 Looking at other distributions with steep learning curves, such as Gentoo or Arch, documentation is trivial. Arch, in particular, has done a fantastic job of providing clear and concise documentation. So much so that, in fact, users of other distros often look at the Arch wiki to find information they need. The Gentoo wiki, although less popular, is also highly detailed.
 
 NixOS, with its even steeper learning curve, of course needs documentation that is as thorough, useful, and extensive as that of its fellow "advanced" distros. The fact that it doesn't, therefore, makes learning it borderline Herculean for any unsuspecting user hoping to try it out.
 
-The [official wiki](https://wiki.nixos.org) is flawed. Although wikis are a popular format for cataloging a lot of information on one website, the NixOS wiki allows *anyone* to contribute. We find this model to only function effectively for a platform like Wikipedia that has a shockingly large editor-base. For one of the most niche operating systems on the planet, a wiki that relies on crowdsourcing is doomed to inaccuracies, shallow information, and generally, less effective development.
+The [official wiki](https://wiki.nixos.org) is flawed. Although wikis are a popular format for cataloging a lot of information on one website, the NixOS wiki allows _anyone_ to contribute. We find this model to only function effectively for a platform like Wikipedia that has a shockingly large editor-base. For one of the most niche operating systems on the planet, a wiki that relies on crowdsourcing is doomed to inaccuracies, shallow information, and generally, less effective development.
 
 Alternatively, of course, NixOS has a [manual](https://nixos.org/manual/nixos/stable/). The manual is great. Information is updated quickly and a pull request, approved by the NixOS documentation team, is an effective method of change.
 
