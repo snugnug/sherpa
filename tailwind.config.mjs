@@ -16,6 +16,7 @@ export default {
           700: "rgb(var(--color-highlight) / <alpha-value>)",
           800: "rgb(var(--color-focused) / <alpha-value>)",
           900: "rgb(var(--color-base) / <alpha-value>)",
+          1000: "rgb(var(--color-black) / <alpha-value>)",
         },
       },
       typography: ({ theme }) => ({
