@@ -6,25 +6,29 @@ import Spacer from "./Spacer.astro";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
+import { siteLink } from "@utils/links";
 ---
 
 <div
   class="flex flex-row flex-wrap my-1 mx-20 p-3 justify-between items-center"
 >
   <div class="flex justify-self-start">
-    <a href="/" class="text-2xl">Sherpa</a>
+    <a href={siteLink(`/${lang}/`)} class="text-2xl">Sherpa</a>
     <div></div>
   </div>
   <div
     class="flex justify-self-end justify-end flex-row items-center space-x-4"
   >
     <div class="text-md justify-between space-x-2">
-      <a href={`/${lang}/`} class="hover:text-theme-accent1">Home</a>
-      <a href={`/${lang}/preface/`} class="hover:text-theme-accent1">Preface</a>
-      <a href={`/${lang}/why-nixos/`} class="hover:text-theme-accent1"
+      <a href={siteLink(`/${lang}/`)} class="hover:text-theme-accent1">Home</a>
+      <a href={siteLink(`/${lang}/preface/`)} class="hover:text-theme-accent1"
+        >Preface</a
+      >
+      <a href={siteLink(`/${lang}/why-nixos/`)} class="hover:text-theme-accent1"
         >Why NixOS?</a
       >
-      <a href={`/${lang}/docs/`} class="hover:text-theme-accent1">Get Started</a
+      <a href={siteLink(`/${lang}/docs/`)} class="hover:text-theme-accent1"
+        >Get Started</a
       >
     </div>
     <Spacer />
