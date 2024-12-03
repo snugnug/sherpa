@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 const whyNixos = await getEntry("docs", "en/whynixos");
 const { Content, headings } = await whyNixos.render();
 ---
