@@ -2,6 +2,10 @@
 import ThemeSwitch from "./ThemeSwitch.astro";
 import Search from "./Search.astro";
 import Spacer from "./Spacer.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <div
@@ -15,10 +19,13 @@ import Spacer from "./Spacer.astro";
     class="flex justify-self-end justify-end flex-row items-center space-x-4"
   >
     <div class="text-md justify-between space-x-2">
-      <a href="/" class="hover:text-theme-accent1">Home</a>
-      <a href="/preface" class="hover:text-theme-accent1">Preface</a>
-      <a href="/why-nixos" class="hover:text-theme-accent1">Why NixOS?</a>
-      <a href="/docs" class="hover:text-theme-accent1">Get Started</a>
+      <a href={`/${lang}/`} class="hover:text-theme-accent1">Home</a>
+      <a href={`/${lang}/preface/`} class="hover:text-theme-accent1">Preface</a>
+      <a href={`/${lang}/why-nixos/`} class="hover:text-theme-accent1"
+        >Why NixOS?</a
+      >
+      <a href={`/${lang}/docs/`} class="hover:text-theme-accent1">Get Started</a
+      >
     </div>
     <Spacer />
     <ThemeSwitch />
