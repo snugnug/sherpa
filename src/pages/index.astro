@@ -1,6 +1,9 @@
 ---
 import Layout from "@layouts/Layout.astro";
+
+import { siteLink } from "@utils/links";
+const origin = Astro.url.origin;
 ---
 
-<meta http-equiv="refresh" content="0;url=/en/" />
+<meta http-equiv="refresh" content={`0;url=${origin + siteLink("en/")}`} />
 <Layout />
