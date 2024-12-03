@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 export async function getStaticPaths() {
   const pages = await getCollection("docs", ({ id }) => {
     return id.includes("preface");
