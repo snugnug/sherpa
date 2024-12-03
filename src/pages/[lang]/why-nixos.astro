@@ -1,0 +1,30 @@
+---
+import { render, getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+export async function getStaticPaths() {
+  const pages = await getCollection("docs", ({ id }) => {
+    return id.includes("whynixos");
+  });
+
+  const paths = pages.map((entry) => {
+    const [lang, ...slug] = entry.id.split("/");
+    return {
+      params: { lang, slug: slug.join("/") || undefined },
+      props: entry,
+    };
+  });
+  return paths;
+}
+
+const entry = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Layout>
+  <div
+    class="prose prose-test justify-center justify-items-center max-w-none lg:prose-xl"
+  >
+    <h1>{entry.data.title}</h1>
+    <Content />
+  </div>
+</Layout>
