@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntry } from "astro:content";
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 const preface = await getEntry("docs", "en/preface");
 const { Content, headings } = await preface.render();
 ---
