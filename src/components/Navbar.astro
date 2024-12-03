@@ -11,7 +11,7 @@ import { siteLink } from "@utils/links";
 ---
 
 <div
-  class="flex flex-row flex-wrap my-1 mx-20 p-3 justify-between items-center"
+  class="flex flex-row flex-wrap my-1 md:mx-20 mx-5 p-3 justify-between items-center"
 >
   <div class="flex justify-self-start">
     <a href={origin + siteLink(`${lang}/`)} class="text-2xl">Sherpa</a>
@@ -20,24 +20,74 @@ import { siteLink } from "@utils/links";
   <div
     class="flex justify-self-end justify-end flex-row items-center space-x-4"
   >
-    <div class="text-md justify-between space-x-2">
-      <a href={origin + siteLink(`${lang}/`)} class="hover:text-theme-accent1"
-        >Home</a
-      >
-      <a
-        href={origin + siteLink(`${lang}/preface/`)}
-        class="hover:text-theme-accent1">Preface</a
-      >
-      <a
-        href={origin + siteLink(`${lang}/why-nixos/`)}
-        class="hover:text-theme-accent1">Why NixOS?</a
-      >
-      <a
-        href={origin + siteLink(`${lang}/docs/`)}
-        class="hover:text-theme-accent1">Get Started</a
-      >
+    <ul
+      class="md:flex flex-col md:flex-row text-center w-full text-md space-x-2 md:justify-around hidden"
+    >
+      <li>
+        <a href={origin + siteLink(`${lang}/`)} class="hover:text-theme-accent1"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href={origin + siteLink(`${lang}/preface/`)}
+          class="hover:text-theme-accent1">Preface</a
+        >
+      </li>
+      <li>
+        <a
+          href={origin + siteLink(`${lang}/why-nixos/`)}
+          class="hover:text-theme-accent1">Why NixOS?</a
+        >
+      </li>
+      <li>
+        <a
+          href={origin + siteLink(`${lang}/docs/`)}
+          class="hover:text-theme-accent1">Get Started</a
+        >
+      </li>
+    </ul>
+    <div id="burger" class="md:hidden">
+      <div class="h-0.5 w-6 my-1.5 bg-theme-600"></div>
+      <div class="h-0.5 w-6 my-1.5 bg-theme-600"></div>
+      <div class="h-0.5 w-6 my-1.5 bg-theme-600"></div>
     </div>
     <Spacer />
     <ThemeSwitch />
   </div>
+  <ul
+    id="mobile-links"
+    class="flex justify-around my-2 flex-row text-center w-full text-md space-x-2 hidden"
+  >
+    <li>
+      <a href={origin + siteLink(`${lang}/`)} class="hover:text-theme-accent1"
+        >Home</a
+      >
+    </li>
+    <li>
+      <a
+        href={origin + siteLink(`${lang}/preface/`)}
+        class="hover:text-theme-accent1">Preface</a
+      >
+    </li>
+    <li>
+      <a
+        href={origin + siteLink(`${lang}/why-nixos/`)}
+        class="hover:text-theme-accent1">Why NixOS?</a
+      >
+    </li>
+    <li>
+      <a
+        href={origin + siteLink(`${lang}/docs/`)}
+        class="hover:text-theme-accent1">Get Started</a
+      >
+    </li>
+  </ul>
+  <script>
+    const burger = document.getElementById("burger");
+    const links = document.getElementById("mobile-links");
+    burger?.addEventListener("click", () => {
+      links?.classList.toggle("hidden");
+    });
+  </script>
 </div>
