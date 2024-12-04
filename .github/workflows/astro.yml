@@ -61,7 +61,8 @@ jobs:
         run: |
           pnpm astro build \
             --site "${{ steps.pages.outputs.origin }}" \
-            --base "${{ steps.pages.outputs.base_path }}"
+            --base "${{ steps.pages.outputs.base_path }}" && \
+          pnpm pagefind -s ./dist/
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
