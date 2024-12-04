@@ -11,11 +11,15 @@ import { siteLink } from "@utils/links";
 ---
 
 <div
-  class="flex flex-row flex-wrap my-1 md:mx-20 mx-5 p-3 justify-between items-center"
+  class="flex flex-row flex-wrap my-1 lg:mx-20 mx-5 p-3 justify-between items-center"
 >
-  <div class="flex justify-self-start">
-    <a href={origin + siteLink(`${lang}/`)} class="text-2xl">Sherpa</a>
+  <div class="flex justify-self-start gap-2 space-x-2">
+    <a
+      href={origin + siteLink(`${lang}/`)}
+      class="text-2xl align-middle self-center">Sherpa</a
+    >
     <div></div>
+    <Search />
   </div>
   <div
     class="flex justify-self-end justify-end flex-row items-center space-x-4"
