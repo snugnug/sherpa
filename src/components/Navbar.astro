@@ -3,7 +3,7 @@ import ThemeSwitch from "./ThemeSwitch.astro";
 import Search from "./Search.astro";
 import Spacer from "./Spacer.astro";
 
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const origin = Astro.url.origin;
