@@ -1,6 +1,5 @@
 ---
 import Navbar from "@components/Navbar.astro";
-import Sidebar from "@components/Sidebar.astro";
 import "@styles/theme.css";
 ---
 
@@ -20,15 +19,12 @@ import "@styles/theme.css";
       <header
         class="fixed top-0 justify-center justify-items-center w-full bg-theme-900"
       >
-        <nav class="self-center mx-20 bg-theme-900">
+        <nav class="self-center container mx-auto bg-theme-900">
           <Navbar />
         </nav>
         <div class="bg-theme-1000 w-full h-0.5"></div>
       </header>
-      <div class="">
-        <Sidebar />
-      </div>
-      <div class="container m-auto pt-24 md:ml-80">
+      <div class="container m-auto pt-24">
         <slot />
       </div>
       <footer

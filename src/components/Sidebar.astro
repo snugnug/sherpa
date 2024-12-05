@@ -1,0 +1,42 @@
+---
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const origin = Astro.url.origin;
+import { siteLink } from "@utils/links";
+---
+
+<aside
+  id="sidebar"
+  class="fixed top-[74px] left-0 h-screen w-60 md:w-72 transition-transform -translate-x-full sm:translate-x-0 md:flex bg-theme-1000"
+>
+  <div class="flex flex-col p-8 justify-items-center flex-grow">
+    <ul
+      class="md:flex flex-col w-full text-xl md:justify-around children:bg-theme-900 children:p-2 space-y-2 children:rounded-md"
+    >
+      <li>
+        <a href={origin + siteLink(`${lang}/`)} class="hover:text-theme-accent1"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href={origin + siteLink(`${lang}/preface/`)}
+          class="hover:text-theme-accent1">Preface</a
+        >
+      </li>
+      <li>
+        <a
+          href={origin + siteLink(`${lang}/why-nixos/`)}
+          class="hover:text-theme-accent1">Why NixOS?</a
+        >
+      </li>
+      <li>
+        <a
+          href={origin + siteLink(`${lang}/docs/`)}
+          class="hover:text-theme-accent1">Get Started</a
+        >
+      </li>
+    </ul>
+  </div>
+</aside>
