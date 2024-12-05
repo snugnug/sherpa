@@ -23,7 +23,7 @@ Nix advantages:
   same result on any system that package is built on.
 - **Single package manager to rule them all**: tired of using NPM, pip, the AUR,
   and all these other package managers? We were too! That's why we are very
-  happy to say that Nix has more than 80,000 packages to install, amd is the
+  happy to say that Nix has more than 100,000 packages to install, and is the
   most up-to-date package manager in existence! We like to think of it as the
   Rule 34 of package managers: if it exists, it's in nixpkgs. If it isn't in
   nixpkgs, it will be added.
@@ -54,7 +54,7 @@ NixOS advantages:
 - **Declarative configuration**: the central feature of NixOS, other than the
   package manager, is the module system. Modules are pretty much a fancy term
   for options. In your NixOS configuration, you can reference one of the
-  thousands of modules NixOS has for applications. This has three advantages:
+  thousands of modules NixOS has for applications. This has two advantages:
   - **_Easy configuration_**: Gone are the days of setting up services manually
     or using docker containers. With NixOS, as long as the module exists, you
     can do all of that with a few lines of code.
