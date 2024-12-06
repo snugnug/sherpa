@@ -16,7 +16,7 @@ hardware.graphics = {
 };
 ```
 
-These settings are usually set when you enable something like Steam, however it would be wise to include it for niche cases.
+These settings are usually set when you enable something like Steam, however it would be wise to include it for other cases.
 
 ### Hybrid Graphics
 
@@ -50,7 +50,7 @@ hardware.nvidia.prime = {
     offload.enable = true;
 
     # See note below
-    # offload.enableOffloadCmd = true;
+    offload.enableOffloadCmd = true;
 
     # Internal graphics from a CPU
     intelBusId = "PCI:0:2:0";
@@ -63,10 +63,10 @@ hardware.nvidia.prime = {
 };
 ```
 
-You can also set `hardware.nvidia.prime.offload.enableOffloadCmd = true;` to enable an `nvidia-offload` command that automatically offloads a program to the GPU. You can use it by prefixing the running command with `nvidia-offload`, for example with Steam, setting the launch options to:
+You can also enable `hardware.nvidia.prime.offload.enableOffloadCmd` to enable an `nvidia-offload` command that automatically offloads a program to the GPU. You can use it by prefixing the running command with `nvidia-offload`, for example with Steam, setting the launch options to:
 
 ```
-nvidia-offload %command
+nvidia-offload %command%
 ```
 
 Returning to the Nix options, to find your respective bus IDs, simply run `lspci` from a terminal. On the left, a bus ID such as "01:00.0" will be shown, and to the right, a description of the hardware the ID corresponds to will be shown. You should be able to identify the bus ID for both your CPU and GPU.
@@ -86,7 +86,7 @@ environment.sessionVariables = {
 };
 ```
 
-If you wish for the dedicated GPU to only be used in games for performance, you can tell Steam to prefix the game launch command w:
+If you wish for the dedicated GPU to only be used in games for performance, you can tell Steam to prefix the game launch command:
 
 ```
 DRI_PRIME=1 %command%
@@ -114,8 +114,10 @@ Some options you may wish to be aware of:
 | `programs.steam.package` | Allows you to define a specific Steam package, for example for use with overrides |
 | `programs.steam.protontricks.enable` | Enables protontricks (like winetricks for Proton) |
 | `programs.steam.remotePlay.openFirewall` | Opens the firewall for Steam Remote Play |
+| `hardware.steam-hardware.enable` | Enables certain udev rules for Steam hardware (controllers, HTC Vive, Index, etc.) |
 
 Please note that this table is not exhaustive and the official NixOS options search should be referenced.
+
 
 ### Heroic Games Launcher
 
@@ -244,6 +246,5 @@ protonup
 You will then need to fully restart Steam and then select it in Settings->Compatibility.
 
 ## VR
-
 
 ## See Also
