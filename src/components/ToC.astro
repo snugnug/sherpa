@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import { getLangFromUrl } from "src/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const origin = Astro.url.origin;
+import { siteLink } from "@utils/links";
+
+const docs = await getCollection("docs");
+const table = docs.map((entry) => ({
+  id: entry.id,
+  heading: entry.data.title,
+  depth: entry.id.split("/").length - 1,
+  parent: entry.id.split("/").length > 2 ? entry.id.split("/")[1] : null,
+  language: entry.id.split("/")[0],
+  slug:
+    origin +
+    siteLink(`${entry.id.split("/")[0] + "/docs/" + entry.id.slice(3)}`),
+}));
+
+const parents = Array.from(new Set(table.map((entry) => entry.parent)));
+console.log(parents);
+console.log(table);
+---
+
+<div>
+  <ul>
+    {
+      parents
+        .filter((entry) => entry !== null)
+    .map((entry, i) => (
+<div class=""><button class="subdirbtn text-lg font-bold" id={"subdirbtn" + i}>{entry}</button></div>
+          <ul id={"subdir" + i} class="subdir">
+            {table
+              .filter(
+                (entry) =>
+                  entry.parent == parents[i + 1] && entry.language == lang,
+              )
+              .map((entry) => (
+                <li class="pl-4">
+                  <a href={entry.slug}>{entry.heading}</a>
+                </li>
+              ))}
+          </ul>
+        ))
+    }
+    {
+      table
+        .filter((entry) => entry.parent == null && entry.language == lang)
+        .map((entry) => (
+          <li>
+            <a class="text-lg font-bold" href={entry.slug}>
+              {entry.heading}
+            </a>
+          </li>
+        ))
+    }
+  </ul>
+</div>
+<script>
+const buttons = document.querySelectorAll('button.subdirbtn');
+const lists = document.querySelectorAll('ul.subdir');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    lists.forEach((list) => {if(list.id.slice(6) == button.id.slice(9)) {list.classList.toggle('hidden')}}) 
+  })
+})
+</script>
