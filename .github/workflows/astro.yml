@@ -14,7 +14,9 @@ on:
       - "**.ts"
       - "**.mjs"
       - "**.js"
-
+  # Allows activation from remote repo
+  repository_dispatch:
+    types: [build_site]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
