@@ -9,7 +9,7 @@ Gaming may naturally be a major field of concern regarding NixOS's compatibility
 You should be sure to enable graphics driver support for OpenGL, Vulkan, etc. You can do that with the following:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 hardware.graphics = {
     enable = true;
     enable32Bit = true; # Also enables 32-bit drivers for things like wine
@@ -27,7 +27,7 @@ For many of you seeking to game on a laptop with NixOS, you may be left wonderin
 Nvidia has support for this through Nvidia Prime. Their "sync" mode enables the use of both GPUs simulateneously:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 hardware.nvidia.prime = {
     sync.enable = true;
     
@@ -45,7 +45,7 @@ hardware.nvidia.prime = {
 Or consider their "offload" mode to optimize battery life, using the dedicated GPU only when needed:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 hardware.nvidia.prime = {
     offload.enable = true;
 
@@ -80,7 +80,7 @@ Nvidia users should also be sure to reference the specific Nvidia page for custo
 On AMD, the process should be much simpler. By default, AMD does not use the dedicated GPU synchronously with the machine. You can replicate similar behavior as on Nvidia for each of the desired outcomes described above. For sync, you can declare the environmental variable `DRI_PRIME=1` like so:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 environment.sessionVariables = {
     DRI_PRIME = "1";
 };
@@ -101,7 +101,7 @@ There are various launchers used in modern gaming, here are a few that you will 
 Steam is a major distributor of games with first-class Linux support, and excellent support on NixOS. It can be installed as simply as:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 programs.steam = {
     enable = true; # Enable Steam
 };
@@ -126,7 +126,7 @@ Heroic Games Launcher is a more recent FOSS launcher with support for games from
 It does not have extensive option declaration however can certainly be added as a package:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 environment.systemPackages = with pkgs; [
     heroic
 ];
@@ -139,7 +139,7 @@ Lutris is another FOSS launcher with support for many different games along with
 It may also be installed as a package:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 environment.systemPackages = with pkgs; [
     lutris
 ];
@@ -152,7 +152,7 @@ Finally, Bottles is a relatively new, GTK4 and FOSS launcher that advertises com
 While they recommend their Flatpak package, we would recommend the app packaged in nixpkgs due to its closer support with Nix.
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 environment.systemPackages = with pkgs; [
     bottles
 ];
@@ -169,7 +169,7 @@ GameMode performs optimizations on the host system and/or game process to improv
 It can be enabled and configured declaratively like so:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 programs.gamemode = {
     enable = true;
     settings = {
@@ -204,7 +204,7 @@ Gamescope is another major utility developed by Valve that acts as a microcompos
 Likewise, it has excellent support in NixOS. It can be enabled and configured declaratively:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 programs.gamescope = {
     enable = true;
     args = [ # Define arguments to launch Gamescope with.
@@ -218,7 +218,7 @@ programs.gamescope = {
 You can also use ChimeraOS's fork, Gamescope-Session, which creates a special Gamescope session to launch from the Display Manager.
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 programs.steam.gamescopeSession = {
     enable = true;
     args = []; # Works the same as programs.gamescope.args
@@ -231,7 +231,7 @@ programs.steam.gamescopeSession = {
 You may wish to install different versions of Proton, such as Glorious Eggroll's fork. You can do so by installing the protonup CLI:
 
 ```nix
-# /etc/nixos/configuration.nix
+# configuration.nix
 environment.systemPackages = with pkgs; [
     protonup
 ];
