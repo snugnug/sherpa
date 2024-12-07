@@ -1,6 +1,5 @@
 ---
 import Navbar from "@components/Navbar.astro";
-import Sidebar from "@components/Sidebar.astro";
 import "@styles/theme.css";
 ---
 
@@ -18,29 +17,26 @@ import "@styles/theme.css";
       class="m-auto w-full h-max min-h-full flex flex-grow text-theme-400 relative"
     >
       <header
-        class="fixed top-0 justify-center justify-items-center w-full bg-theme-900 z-20"
+        class="fixed top-0 justify-center justify-items-center w-full bg-theme-900"
       >
-        <nav class="self-center sm:mx-10 lg:mx-20 bg-theme-900">
+        <nav class="self-center container mx-auto bg-theme-900">
           <Navbar />
         </nav>
         <div class="bg-theme-1000 w-full h-0.5"></div>
       </header>
-      <div class="">
-        <Sidebar />
-      </div>
-      <div class="container m-auto pt-24 md:ml-80 relative">
+      <div class="container m-auto pt-24">
         <slot />
-        <footer
-          class="text-theme-400 w-fit inset-0 mx-auto items-center text-center justify-center top-[100%] self-end absolute p-4"
-        >
-          <span class="text-sm"
-            >Code licensed in GPLv3, Content licensed under CC-BY-SA. More
-            information on <a href="https://github.com/the-unnamed-nug/sherpa"
-              >Github<a>.</a>
-            </a>
-          </span>
-        </footer>
       </div>
+      <footer
+        class="text-theme-400 w-full mx-auto items-center text-center justify-center top-[100%] self-end absolute p-4"
+      >
+        <span class="text-sm"
+          >Code licensed in GPLv3, Content licensed under CC-BY-SA. More
+          information on <a href="https://github.com/the-unnamed-nug/sherpa"
+            >Github<a>.</a>
+          </a>
+        </span>
+      </footer>
     </div>
 
     <style>

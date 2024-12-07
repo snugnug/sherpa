@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -20,7 +22,17 @@ export default {
         },
       },
       typography: ({ theme }) => ({
-        test: {
+        DEFAULT: {
+          css: {
+            "code::before": {
+              content: "",
+            },
+            "code::after": {
+              content: "",
+            },
+          },
+        },
+        colors: {
           css: {
             "--tw-prose-body": theme("colors.theme[900]"),
             "--tw-prose-headings": theme("colors.theme[900]"),
@@ -59,5 +71,10 @@ export default {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    plugin(function ({ addVariant }) {
+      addVariant("children", "&>*");
+    }),
+  ],
 };
