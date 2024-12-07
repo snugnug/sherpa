@@ -109,12 +109,12 @@ programs.steam = {
 
 Some options you may wish to be aware of:
 
-| Option | Definition |
-|________|____________|
-| `programs.steam.package` | Allows you to define a specific Steam package, for example for use with overrides |
-| `programs.steam.protontricks.enable` | Enables protontricks (like winetricks for Proton) |
-| `programs.steam.remotePlay.openFirewall` | Opens the firewall for Steam Remote Play |
-| `hardware.steam-hardware.enable` | Enables certain udev rules for Steam hardware (controllers, HTC Vive, Index, etc.) |
+| Option                                   | Definition                                                                         |
+| ---------------------------------------- | ---------------------------------------------------------------------------------- |
+| `programs.steam.package`                 | Allows you to define a specific Steam package, for example for use with overrides  |
+| `programs.steam.protontricks.enable`     | Enables protontricks (like winetricks for Proton)                                  |
+| `programs.steam.remotePlay.openFirewall` | Opens the firewall for Steam Remote Play                                           |
+| `hardware.steam-hardware.enable`         | Enables certain udev rules for Steam hardware (controllers, HTC Vive, Index, etc.) |
 
 Please note that this table is not exhaustive and the official NixOS options search should be referenced.
 
