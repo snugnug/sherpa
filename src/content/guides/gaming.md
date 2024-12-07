@@ -247,4 +247,18 @@ You will then need to fully restart Steam and then select it in Settings->Compat
 
 ## VR
 
+This section is still a work-in-progress. If you would like to contribute, please submit a PR in the [repo](https://github.com/the-unnamed-nug/sherpa).
+
+For wired play, see [Monado](https://github.com/SimulaVR/monado), an open source implimentation of the OpenXR API.
+
+For wireless devices, see [WiVRn](https://github.com/WiVRn/WiVRn), a VR streamer built off of Monado for devices such as the Quest.
+
+For now, you can reference the [NixOS Wiki](https://wiki.nixos.org/wiki/VR) and the [Linux VR Adventures Wiki](https://wiki.nixos.org/wiki/VR).
+
 ## See Also
+
+- [Vimjoyer's Video](https://www.youtube.com/watch?v=qlfm3MEbqYA)
+- [Arch Wiki](https://wiki.archlinux.org/title/Gaming)
+- [Linux VR Adventures Wiki](https://lvra.gitlab.io/)
+- [r/linux_gaming FAQ](https://www.reddit.com/r/linux_gaming/wiki/faq/)
+
