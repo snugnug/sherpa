@@ -57,6 +57,8 @@ jobs:
           cd ../../
           git commit -am "Update submodule to latest"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: pnpm/action-setup@v4
         with:
           version: latest
