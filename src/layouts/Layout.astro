@@ -25,13 +25,13 @@ import "@styles/theme.css";
         </nav>
         <div class="bg-theme-1000 w-full h-0.5"></div>
       </header>
-      <div class="">
+      <div class="z-20">
         <Sidebar />
       </div>
-      <div class="container m-auto pt-24 md:ml-80 relative">
+      <div class="pt-24 relative w-full">
         <slot />
         <footer
-          class="text-theme-400 w-fit inset-0 mx-auto items-center text-center justify-center top-[100%] self-end absolute p-4"
+          class="text-theme-400 w-fit inset-0 mx-auto top-[100%] self-end absolute p-4"
         >
           <span class="text-sm"
             >Code licensed in GPLv3, Content licensed under CC-BY-SA. More
