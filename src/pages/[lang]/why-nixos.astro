@@ -21,10 +21,12 @@ const { Content } = await render(entry);
 ---
 
 <Layout>
+  <div class="p-6">
   <div
-    class="prose prose-colors justify-center justify-items-center prose-sm px-2 md:prose-base lg:prose-lg xl:prose-xl mx-auto"
+    class="ms-auto prose prose-colors justify-center justify-items-center prose-sm md:prose-base lg:prose-lg xl:prose-xl" 
   >
     <h1>{entry.data.title}</h1>
-    <Content />
+      <Content />
+    </div>
   </div>
 </Layout>

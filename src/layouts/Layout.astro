@@ -28,17 +28,19 @@ import "@styles/theme.css";
       <div class="z-20">
         <Sidebar />
       </div>
-      <div class="pt-24 relative w-full">
+      <div class="md:pl-72 pt-24 relative md:w-[calc(65ch+(100%-65ch+18rem)/2)]">
         <slot />
         <footer
-          class="text-theme-400 w-fit inset-0 mx-auto top-[100%] self-end absolute p-4"
+          class="text-theme-400 p-6 ms-auto"
         >
+          <div class="ms-auto max-w-[65ch]">
           <span class="text-sm"
             >Code licensed in GPLv3, Content licensed under CC-BY-SA. More
-            information on <a href="https://github.com/the-unnamed-nug/sherpa"
+            information on <a href="https://github.com/snugnug/sherpa"
               >Github<a>.</a>
             </a>
-          </span>
+            </span>
+          </div>
         </footer>
       </div>
     </div>
