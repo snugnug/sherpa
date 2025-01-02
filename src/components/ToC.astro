@@ -29,7 +29,7 @@ console.log(table);
       parents
         .filter((entry) => entry !== null)
     .map((entry, i) => (
-<div class=""><button class="subdirbtn text-lg font-bold" id={"subdirbtn" + i}>{entry}</button></div>
+<div class=""><button class="subdirbtn text-lg font-bold capitalize" id={"subdirbtn" + i}>{entry}</button></div>
           <ul id={"subdir" + i} class="subdir">
             {table
               .filter(
